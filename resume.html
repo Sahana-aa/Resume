@@ -29,9 +29,12 @@
     
         <section>
             <h2>Career Objective</h2>
-            <p>
-                Determined and hardworking person looking for a challenging job within a rapidly growing organization where I can implement my technical skills and theoretical knowledge in real-time approaching situations to benefit both my career and the organization.
+            <p id="career-text">
+                Determined and hardworking person looking for a challenging job within a rapidly growing organization where I can
+                <span id="dots">...</span>
+                <span id="more-text" style="display: none;">  implement my technical skills and theoretical knowledge in real-time approaching situations to benefit both my career and the organization.</span>
             </p>
+            <button id="read-more-btn">Read More..</button>
         </section>
         <section>
             <h2>Education Qualification</h2>
@@ -136,5 +139,28 @@
     <footer>
         <p>© 2024 Sahana. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Get the required elements
+const dots = document.getElementById("dots");
+const moreText = document.getElementById("more-text");
+const readMoreBtn = document.getElementById("read-more-btn");
+
+// Add a click event listener to the button
+readMoreBtn.addEventListener("click", () => {
+    if (dots.style.display === "none") {
+        // If expanded, hide the additional text and show dots
+        dots.style.display = "inline";
+        moreText.style.display = "none";
+        readMoreBtn.textContent = "Read More";
+    } else {
+        // If collapsed, show the additional text and hide dots
+        dots.style.display = "none";
+        moreText.style.display = "inline";
+        readMoreBtn.textContent = "Read Less";
+    }
+});
+
+    </script>
 </body>
 </html>
